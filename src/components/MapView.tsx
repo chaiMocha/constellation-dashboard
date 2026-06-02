@@ -3,12 +3,10 @@ import L from 'leaflet';
 import type { TelemetryData } from '../types/types';
 import 'leaflet/dist/leaflet.css';
 
-// Explicitly import marker assets to bypass Vite asset resolution issues
 import markerIcon from 'leaflet/dist/images/marker-icon.png';
 import markerIconRetina from 'leaflet/dist/images/marker-icon-2x.png';
 import markerShadow from 'leaflet/dist/images/marker-shadow.png';
 
-// Reconfigure the default Leaflet icon configuration
 const DefaultIcon = L.icon({
   iconUrl: markerIcon,
   iconRetinaUrl: markerIconRetina,
@@ -25,7 +23,6 @@ interface MapViewProps {
 }
 
 export default function MapView({ satellites }: MapViewProps) {
-  // Center the tracking map globally at equatorial coordinate baseline
   const globalCenter: [number, number] = [0, 0];
 
   return (
